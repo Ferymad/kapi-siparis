@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { salesService } from '../services/salesService'
 
-export function useFetchSalesData() {
+export function useFetchSalesData(filters) {
   const [salesData, setSalesData] = useState(null)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
@@ -9,8 +9,8 @@ export function useFetchSalesData() {
   useEffect(() => {
     async function fetchData() {
       try {
-        console.log('Fetching sales data...');
-        const data = await salesService.fetchSalesData()
+        console.log('Fetching sales data with filters:', filters);
+        const data = await salesService.fetchSalesData(filters)
         console.log('Fetched data:', data);
         setSalesData(data)
         setLoading(false)
@@ -22,7 +22,7 @@ export function useFetchSalesData() {
     }
 
     fetchData()
-  }, [])
+  }, [filters]) // Include filters in the dependency array
 
   return { salesData, loading, error }
 }

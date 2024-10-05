@@ -29,7 +29,6 @@ yarn-error.log*
 *.njsproj
 *.sln
 *.sw?
-.ai
 .cursorrules
 
 # OS generated files

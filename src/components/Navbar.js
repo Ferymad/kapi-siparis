@@ -7,6 +7,7 @@ function Navbar() {
       <ul className="flex space-x-4">
         <li><Link to="/" className="text-white hover:text-blue-200">Home</Link></li>
         <li><Link to="/dashboard" className="text-white hover:text-blue-200">Dashboard</Link></li>
+        <li><Link to="/analytics" className="text-white hover:text-blue-200">Analytics</Link></li>
       </ul>
     </nav>
   );
